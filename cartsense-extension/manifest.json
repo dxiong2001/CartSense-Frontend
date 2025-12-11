@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "CartSense",
+  "version": "1.0",
+  "description": "CartSense finds real-time grocery prices for ingredients on any recipe page.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://localhost:3000/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CartSense"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

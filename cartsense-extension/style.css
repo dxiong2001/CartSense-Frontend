@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  width: 260px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+#results ul {
+  padding-left: 20px;
+}
