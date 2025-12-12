@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   padding: 10px;
-  width: 260px;
+  width: 300px;
 }
 
 button {
@@ -20,4 +20,18 @@ button:hover {
 
 #results ul {
   padding-left: 20px;
+}
+
+#cartsense-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #3b82f6;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999999;
+  cursor: pointer;
 }

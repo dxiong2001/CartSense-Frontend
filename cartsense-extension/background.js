@@ -1,5 +1,7 @@
 chrome.runtime.onMessage.addListener(async (msg, sender, sendResponse) => {
-  if (msg.action === "LOOKUP_PRICES") {
+  if (msg.action === "AUTO_LOOKUP") {
+    console.log("Auto lookup triggered:", msg.ingredients);
+
     try {
       const res = await fetch("http://localhost:3001/scrape", {
         method: "POST",
@@ -8,10 +10,19 @@ chrome.runtime.onMessage.addListener(async (msg, sender, sendResponse) => {
       });
 
       const data = await res.json();
-      sendResponse({ success: true, data });
+      console.log("Results:", data);
+
+      // Send results back to content script so it can update UI later
+      chrome.tabs.sendMessage(sender.tab.id, {
+        action: "SHOW_RESULTS",
+        results: data.results,
+      });
+
+      sendResponse({ success: true });
     } catch (err) {
       sendResponse({ success: false, error: err.toString() });
     }
-    return true;
+
+    return true; // async response
   }
 });
