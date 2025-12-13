@@ -26,6 +26,8 @@ const STOP_WORDS = new Set([
   "ml",
   "milliliter",
   "milliliters",
+  "fl oz",
+  "fluid ouces",
   "l",
   "liter",
   "liters",
@@ -179,8 +181,8 @@ function createCartSenseButton() {
     "icons/cartsense.png"
   )}" 
   style="
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
     pointer-events: none;
   ">
